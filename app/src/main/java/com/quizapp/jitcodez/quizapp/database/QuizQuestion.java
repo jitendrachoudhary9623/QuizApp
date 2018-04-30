@@ -10,15 +10,26 @@ public class QuizQuestion implements Parcelable {
     String optionC;
     String optionD;
     String correctAns;
+    String category;
     int id;
     int questionNo;
-    public QuizQuestion(String question, String optionA, String optionB, String optionC, String optionD, String correctAns, int id, int questionNo) {
+
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
+    }
+
+    public QuizQuestion(String question, String optionA, String optionB, String optionC, String optionD, String correctAns, String category, int id, int questionNo) {
         this.question = question;
         this.optionA = optionA;
         this.optionB = optionB;
         this.optionC = optionC;
         this.optionD = optionD;
         this.correctAns = correctAns;
+        this.category=category;
         this.id = id;
         this.questionNo = questionNo;
     }
@@ -103,6 +114,7 @@ public class QuizQuestion implements Parcelable {
         optionC = in.readString();
         optionD = in.readString();
         correctAns = in.readString();
+        category=in.readString();
         id = in.readInt();
         questionNo = in.readInt();
     }
@@ -115,6 +127,7 @@ public class QuizQuestion implements Parcelable {
         dest.writeString(optionC);
         dest.writeString(optionD);
         dest.writeString(correctAns);
+        dest.writeString(category);
         dest.writeInt(id);
         dest.writeInt(questionNo);
     }

@@ -7,7 +7,7 @@ import com.quizapp.jitcodez.quizapp.database.QuizContract.QuizEntry;
 public class QuizHelper extends SQLiteOpenHelper {
 
     public static final String DATABASE_NAME="quiz.db";
-    public static final int DATABASE_VERSION=4;
+    public static final int DATABASE_VERSION=10;
 
     public QuizHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -16,8 +16,9 @@ public class QuizHelper extends SQLiteOpenHelper {
     public static final String CREATE_QUERY=" CREATE TABLE " + QuizEntry.TABLE_NAME
             +" ( "
 
-            +QuizEntry.QUESTION_ID +" INTEGER NOT NULL PRIMARY KEY, "
+            +QuizEntry.QUESTION_ID +" INTEGER NOT NULL PRIMARY KEY , "
             +QuizEntry.QUESTION_NO +" INTEGER NOT NULL , "
+            +QuizEntry.CATEGORY+" TEXT NOT NULL ,"
 
             +QuizEntry.QUESTION+" TEXT NOT NULL ,"
             +QuizEntry.OPTION_A+" TEXT NOT NULL ,"
@@ -30,6 +31,9 @@ public class QuizHelper extends SQLiteOpenHelper {
     public static final String DROP_QUERY="DROP TABLE IF EXISTS "+QuizEntry.TABLE_NAME+";";
     @Override
     public void onCreate(SQLiteDatabase db) {
+
+        db.execSQL(DROP_QUERY);
+
         db.execSQL(CREATE_QUERY);
     }
 

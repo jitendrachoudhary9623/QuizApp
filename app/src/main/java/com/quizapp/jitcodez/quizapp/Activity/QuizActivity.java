@@ -31,7 +31,7 @@ public class QuizActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quiz);
-        sharedpreferences = getApplicationContext().getSharedPreferences(mypreference, MODE_PRIVATE);
+       /* sharedpreferences = getApplicationContext().getSharedPreferences(mypreference, MODE_PRIVATE);
         if(sharedpreferences.contains("Init"))
         {
 
@@ -39,7 +39,8 @@ public class QuizActivity extends AppCompatActivity {
         else {
             insertData();
         }
-        getQuestions();
+        getQuestions();*/
+       questionList=getIntent().getParcelableArrayListExtra("questionList");
         QuestionFragment fragment=new QuestionFragment();
         Bundle b=new Bundle();
         b.putInt(QuizContract.QuizEntry.QUESTION_NO,0);
@@ -51,7 +52,7 @@ public class QuizActivity extends AppCompatActivity {
                 .add(R.id.question_container, fragment)
                 .commit();
     }
-
+/*
     String question;
     String optionA;
     String optionB;
@@ -71,13 +72,13 @@ public class QuizActivity extends AppCompatActivity {
     List<String>  correctAns=new ArrayList<>();
     List<Integer> id=new ArrayList<>();
     List<Integer> questionNo=new ArrayList<>();
-     */
+     *//*
     public void insertData()
     {
        editor = sharedpreferences.edit();
         editor.putBoolean("Init", true);
         editor.commit();
-       /* question="Which of the following is not OOPS concept in Java?";
+       *//* question="Which of the following is not OOPS concept in Java?";
         optionA=" a) Inheritance";
         optionB=" b) Encapsulation";
         optionC=" c) Polymorphism";
@@ -103,7 +104,7 @@ public class QuizActivity extends AppCompatActivity {
 
         getContentResolver().insert(uri,
                 cv);
-                */
+                *//*
        String fileContent="";
         BufferedReader reader = null;
         try {
@@ -130,10 +131,10 @@ public class QuizActivity extends AppCompatActivity {
         for(int i=0;i<QE.length;i++)
         {
             String bracket[]=QE[i].split("]]");
-           /* for(int j=0;j<bracket.length;j++)
+           *//* for(int j=0;j<bracket.length;j++)
             {
                 Log.d("BRACKET",bracket[j]);
-            }*/
+            }*//*
 
             ContentValues cv = new ContentValues();
             Uri uri = QuizContract.QuizEntry.CONTENT_URI;
@@ -149,6 +150,7 @@ public class QuizActivity extends AppCompatActivity {
                 cv.put(QuizContract.QuizEntry.OPTION_D, bracket[j++]);
                 cv.put(QuizContract.QuizEntry.CORRECT_ANS, bracket[j++]);
 
+                cv.put(QuizContract.QuizEntry.CATEGORY, "");
 
 
                 getContentResolver().insert(uri,
@@ -189,4 +191,5 @@ public class QuizActivity extends AppCompatActivity {
 
     }
 
+    */
 }

@@ -12,6 +12,16 @@
         android:id="@+id/main_part_one">
 
     </LinearLayout>
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rv_category"
+        android:layout_width="match_parent"
+
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/fifteen_dp"
+        >
+
+    </android.support.v7.widget.RecyclerView>
+
     <LinearLayout
         android:layout_alignParentBottom="true"
         android:layout_width="match_parent"
@@ -20,14 +30,6 @@
         android:weightSum="1"
         android:orientation="vertical"
         android:id="@+id/main_part_two">
-<Button
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/colorPrimary"
-    android:textColor="#ECEFF1"
-    android:text="@string/start_quiz"
-    android:layout_margin="10dp"
-    android:textStyle="bold"
-    android:id="@+id/start_quiz"/>
+
     </LinearLayout>
 </RelativeLayout>

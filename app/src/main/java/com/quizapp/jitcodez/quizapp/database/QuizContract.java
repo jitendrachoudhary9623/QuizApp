@@ -20,6 +20,7 @@ public class QuizContract {
         public static final String CORRECT_ANS="correctAns";
         public static final String QUESTION_ID="id";
         public static final String QUESTION_NO="question_num";
+        public static final String CATEGORY="category";
 
 
 

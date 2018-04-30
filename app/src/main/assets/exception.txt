@@ -1,0 +1,35 @@
+101
+]]
+1
+]]
+Which of these standard collection classes implements a dynamic array?
+]]
+a) AbstractList
+]]
+b) LinkedList
+]]
+c) ArrayList
+]]
+d) AbstractSet
+]]
+C
+!!
+102
+]]
+2
+]]
+Which of these class can generate an array which can increase and decrease in size automatically?
+]]
+ a) ArrayList()
+]]
+ b) DynamicList()
+]]
+ c) LinkedList()
+]]
+ d) DynamicList()
+]]
+A
+!!
+
+
+

@@ -1,0 +1,33 @@
+901
+]]
+1
+]]
+Which of these class is superclass of String and StringBuffer class?]]
+ a) java.util
+]]
+ b) java.lang
+]]
+c) ArrayList
+]]
+ d) None of the mentioned
+]]
+B
+!!
+902
+]]
+2
+]]
+2. Which of these operators can be used to concatenate two or more String objects?]]
+ a) +
+]]
+ b) +=
+]]
+ c) &
+]]
+ d) ||
+]]
+A
+!!
+
+
+
