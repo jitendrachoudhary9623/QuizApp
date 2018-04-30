@@ -17,6 +17,11 @@
             </intent-filter>
         </activity>
         <activity android:name=".Activity.QuizActivity"></activity>
+        <provider
+            android:name=".QuizContentProvider"
+            android:authorities="com.quizapp.jitcodez.quizapp"
+            android:enabled="true"
+            android:exported="true"></provider>
     </application>
 
 </manifest>
