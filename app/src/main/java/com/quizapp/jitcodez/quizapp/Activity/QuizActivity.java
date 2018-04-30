@@ -1,6 +1,7 @@
 package com.quizapp.jitcodez.quizapp.Activity;
 
 import android.content.ContentValues;
+import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.Parcelable;
@@ -18,13 +19,22 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class QuizActivity extends AppCompatActivity {
-
+    public static final String mypreference = "mypref";
+    SharedPreferences sharedpreferences;
+    SharedPreferences.Editor editor;
     List<QuizQuestion> questionList=new ArrayList<QuizQuestion>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quiz);
-        insertData();
+        sharedpreferences = getApplicationContext().getSharedPreferences(mypreference, MODE_PRIVATE);
+        if(sharedpreferences.contains("Initialized"))
+        {
+
+        }
+        else {
+            insertData();
+        }
         getQuestions();
         QuestionFragment fragment=new QuestionFragment();
         Bundle b=new Bundle();
@@ -49,13 +59,16 @@ public class QuizActivity extends AppCompatActivity {
     
     public void insertData()
     {
+        editor = sharedpreferences.edit();
+        editor.putBoolean("Initialized", true);
+        editor.commit();
         question="Which of the following is not OOPS concept in Java?";
         optionA=" a) Inheritance";
         optionB=" b) Encapsulation";
         optionC=" c) Polymorphism";
         optionD=" d) Compilation";
         correctAns="D";
-        id=3;
+        id=1;
         questionNo=1;
 
 
