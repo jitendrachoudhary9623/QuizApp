@@ -16,12 +16,15 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Activity.QuizActivity"></activity>
+        <activity android:name=".Activity.QuizActivity" />
+
         <provider
             android:name=".QuizContentProvider"
             android:authorities="com.quizapp.jitcodez.quizapp"
             android:enabled="true"
-            android:exported="true"></provider>
+            android:exported="true" />
+
+        <activity android:name=".Activity.ScoreActivity"></activity>
     </application>
 
 </manifest>

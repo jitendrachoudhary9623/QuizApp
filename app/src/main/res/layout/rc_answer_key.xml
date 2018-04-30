@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/rc_card_view"
+    android:layout_margin="@dimen/fifteen_dp"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    card_view:cardCornerRadius="12dp"
+    card_view:cardElevation="10dp"
+    >
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="@dimen/fifteen_dp">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Question"
+            android:textColor="@color/colorPrimary"
+            android:layout_margin="@dimen/fifteen_dp"
+            android:textAlignment="center"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:background="@drawable/border"
+            android:id="@+id/rc_question"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:background="@drawable/border"
+            android:layout_below="@id/rc_question"
+            android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/rc_question"
+            android:text="Correct Answer"
+            android:id="@+id/rc_correct"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="@color/colorPrimary"
+            android:layout_margin="@dimen/ten_dp"
+                        />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/rc_correct"
+            android:text="User Answer"
+            android:id="@+id/rc_user"
+            android:textSize="16sp"
+android:textColor="@color/colorPrimary"
+            android:textStyle="bold"
+
+            android:layout_margin="@dimen/ten_dp"
+
+            />
+        </LinearLayout>
+    </RelativeLayout>
+</android.support.v7.widget.CardView>
