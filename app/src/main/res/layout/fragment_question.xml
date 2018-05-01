@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:margin="http://schemas.android.com/apk/res-auto">
@@ -65,6 +68,7 @@
         </LinearLayout>
     </RelativeLayout>
 
+
    <LinearLayout
        android:layout_width="match_parent"
        android:layout_height="wrap_content"
@@ -86,8 +90,8 @@
            />
        <Button
            android:layout_width="match_parent"
-           android:layout_height="45dp"
-           android:layout_marginTop="@dimen/two_dp"
+           android:layout_height="wrap_content"
+           android:minHeight="45dp"           android:layout_marginTop="@dimen/two_dp"
 
            android:layout_marginLeft="@dimen/fifteen_dp"
            android:layout_marginRight="@dimen/fifteen_dp"           android:background="@color/colorPrimary"
@@ -97,9 +101,10 @@
            android:textStyle="bold"/>
        <Button
            android:layout_width="match_parent"
-           android:layout_height="45dp"
-           android:layout_marginTop="@dimen/two_dp"
+           android:layout_height="wrap_content"
+           android:minHeight="45dp"
 
+           android:layout_marginTop="@dimen/two_dp"
            android:layout_marginLeft="@dimen/fifteen_dp"
            android:layout_marginRight="@dimen/fifteen_dp"           android:background="@color/colorPrimary"
            android:textColor="#ECEFF1"
@@ -108,8 +113,8 @@
            android:textStyle="bold"/>
        <Button
            android:layout_width="match_parent"
-           android:layout_height="45dp"
-           android:layout_marginTop="@dimen/two_dp"
+           android:layout_height="wrap_content"
+           android:minHeight="45dp"           android:layout_marginTop="@dimen/two_dp"
            android:layout_marginLeft="@dimen/fifteen_dp"
            android:layout_marginRight="@dimen/fifteen_dp"           android:background="@color/colorPrimary"
            android:textColor="#ECEFF1"
@@ -118,11 +123,12 @@
            android:textStyle="bold"/>
        <Button
            android:layout_width="match_parent"
-           android:layout_height="45dp"
-           android:layout_marginTop="@dimen/two_dp"
+           android:layout_height="wrap_content"
+           android:minHeight="45dp"           android:layout_marginTop="@dimen/two_dp"
 
            android:layout_marginLeft="@dimen/fifteen_dp"
            android:layout_marginRight="@dimen/fifteen_dp"
+           android:layout_marginBottom="100dp"
            android:background="@color/colorPrimary"
            android:textColor="#ECEFF1"
            android:text="Option D"
@@ -134,8 +140,9 @@
         android:layout_width="match_parent"
         android:layout_height="@dimen/fifty_dp"
         android:layout_weight="1"
+        android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true">
+     >
 
         <Button
             android:layout_width="match_parent"
@@ -147,5 +154,4 @@
             android:textStyle="bold"
             android:id="@+id/next_question"/>
     </LinearLayout>
-
-</RelativeLayout>
+</RelativeLayout></ScrollView>

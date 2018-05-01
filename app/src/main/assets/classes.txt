@@ -2,34 +2,143 @@
 ]]
 1
 ]]
-Which of these standard collection classes implements a dynamic array?
+What is the stored in the object obj in following lines of code?\n
+box obj;
+]]a) Memory address of allocated memory of object
+]]b) NULL
+]]c) Any arbitrary pointer
+]]d) Garbage
 ]]
-a) AbstractList
-]]
-b) LinkedList
-]]
-c) ArrayList
-]]
-d) AbstractSet
-]]
-C
+B
 !!
 102
 ]]
 2
 ]]
-Which of these class can generate an array which can increase and decrease in size automatically?
-]]
- a) ArrayList()
-]]
- b) DynamicList()
-]]
- c) LinkedList()
-]]
- d) DynamicList()
+Which of these keywords is used to make a class?
+]]a) class
+]]b) struct
+]]c) int
+]]d) none of the mentioned
 ]]
 A
 !!
-
-
-
+103
+]]
+3
+]]
+Which of the following is a valid declaration of an object of class Box?
+]]a) Box obj = new Box();
+]]b) Box obj = new Box;
+]]c) obj = new Box();
+]]d) new Box obj;
+]]A
+!!
+104
+]]
+4
+]]
+Which of these operators is used to allocate memory for an object?
+]]a) malloc
+]]b) alloc
+]]c) new
+]]d) give
+]]C
+!!
+105
+]]
+5
+]]
+Which of these statement is incorrect?
+]]a) Every class must contain a main() method
+]]b) Applets do not require a main() method at all
+]]c) There can be only one main() method in a program
+]]d) main() method must be made public
+]]A
+!!
+106
+]]
+6
+]]
+What is the output of this program?\n
+	class main_class\n
+	{\n
+		public static void main(String args[])\n
+            		{\n
+                		int x = 9;\n
+				if (x == 9)\n
+		                {\n
+		                    int x = 8;\n
+		                    System.out.println(x);\n
+		                }\n
+	                }\n
+	}
+]]a) 9
+]]b) 8
+]]c) Compilation error
+]]d) Runtime error
+]]B
+!!
+107
+]]
+7
+]]
+Which of the following statements is correct?
+]]a) Public method is accessible to all other classes in the hierarchy
+]]b) Public method is accessible only to subclasses of its parent class
+]]c) Public method can only be called by object of its class
+]]d) Public method can be accessed by calling object of the public class
+]]A
+!!
+108
+]]
+8
+]]
+What is the output of this program?\n
+class box\n
+{\n
+int width;\n
+int height;\n
+int length;\n
+}\n
+class mainclass\n
+{\n
+public static void main(String args[])\n
+{\n
+box obj = new box();\n
+obj.width = 10;\n
+obj.height = 2;\n
+obj.length = 10;\n
+int y = obj.width * obj.height * obj.length;\n
+System.out.print(y);\n
+}\n
+}
+]]a) 12
+]]b) 200
+]]c) 400
+]]d) 100
+]]B
+!!
+109
+]]
+9
+]]
+What is the output of this program?\n
+class box\n
+{int width;\n
+int height;\n
+int length;\n
+}\n
+class mainclass\n
+{\n
+ public static void main(String args[])\n
+{\n
+box obj = new box();\n
+System.out.println(obj);\n
+}\n
+}
+]]a) 0
+]]b) 1
+]]c) Runtime error
+]]d) classname@hashcode in hexadecimal form
+]]D

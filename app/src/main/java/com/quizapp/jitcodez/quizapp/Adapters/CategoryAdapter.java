@@ -188,7 +188,13 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.Catego
                         new InputStreamReader(mContext.getAssets().open(filename), "UTF-8"));
                 String mLine;
                 while ((mLine = reader.readLine()) != null) {
-                    fileContent=fileContent+mLine;
+
+                    if(mLine.contains("\\n")) {
+                        mLine=mLine.replace("\\n","");
+                        fileContent = fileContent + mLine + "\n";
+                    }
+                    else
+                        fileContent=fileContent+mLine;
 
                 }
             } catch (IOException e) {
