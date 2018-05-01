@@ -1,0 +1,45 @@
+1001
+]]1
+]] Why are generics used?
+]] a) Generics make code more fast
+]] b) Generics make code more optimised and readable
+]]c) Generics add stability to your code by making more of your bugs detectable at compile time
+]]d) Generics add stability to your code by making more of your bugs detectable at run time
+]]C
+!!
+1002
+]]2
+]] Which of these type parameters is used for a generic class to return and accept any type of object?
+]] a) K
+]] b) N
+]] c) T
+]] d) V
+]]C
+!!
+1003
+]]3
+]]. Which of these is an correct way of defining generic class?
+]] a) class name(T1, T2, …, Tn) { /* … */ }
+]] b) class name { /* … */ }
+]] c) class name[T1, T2, …, Tn] { /* … */ }
+]] d) class name{T1, T2, …, Tn} { /* … */ }
+]]B
+!!
+1004
+]]4
+]] Which of the following is incorrect statement regarding the use of generics and parameterized types in Java?
+]]a) Generics provide type safety by shifting more type checking responsibilities to the compile
+]]b) Generics and parameterized types eliminate the need for down casts when using Java Collections
+]]c) When designing your own collections class (say, a linked list), generics and parameterized types allow you to achieve type safety with just a single class definition as opposed to defining multiple classes
+]] d) All of the mentioned
+]]C
+!!
+1005
+]]5
+]] Which of the following reference types cannot be generic?
+]] a) Anonymous inner class
+]] b) Interface
+]] c) Inner class
+]] d) All of the mentioned
+]]A
+!!

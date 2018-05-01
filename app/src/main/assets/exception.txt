@@ -1,35 +1,36 @@
-101
-]]
-1
-]]
-Which of these standard collection classes implements a dynamic array?
-]]
-a) AbstractList
-]]
-b) LinkedList
-]]
-c) ArrayList
-]]
-d) AbstractSet
-]]
-C
+301
+]]1
+]]The class at the top of exception class hierarchy is
+]]ArithmeticException
+]]Throwable
+]]Object
+]]Exception
+]]B
 !!
-102
+302
+]]2
+]]n which of the following package Exception class exist?
+]]java.util
+]]java.io
 ]]
-2
-]]
-Which of these class can generate an array which can increase and decrease in size automatically?
-]]
- a) ArrayList()
-]]
- b) DynamicList()
-]]
- c) LinkedList()
-]]
- d) DynamicList()
-]]
-A
+]]java.langjava.file
+]]C
 !!
-
-
-
+303
+]]3
+]]Exception generated in try block is caught in ........... block.
+]]catch
+]]throw
+]]throws
+]]finally
+]]A
+!!
+304
+]]4
+]]Which keyword is used to explicitly throw an exception?
+]]try
+]]throwing
+]]catch
+]]throw
+]]D
+!!

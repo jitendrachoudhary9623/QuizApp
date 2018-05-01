@@ -1,0 +1,36 @@
+901
+]]1
+]]1. How constructor can be used for a servlet?
+]]a) Initialization
+]]b) Contructor function
+]]c) Initialization and Contructor function
+]]d) Setup() method
+]]C
+!!
+902
+]]2
+]]Which of the following code is used to get an attribute in a HTTP Session object in servlets?
+]]a) session.getAttribute(String name)
+]]b) session.alterAttribute(String name)
+]]c) session.updateAttribute(String name)
+]]d) session.setAttribute(String name)
+]]A
+!!
+903
+]]3
+]]Which method is used to get three-letter abbreviation for locale’s country in servlets?
+]]a) Request.getISO3Country()
+]]b) Locale.getISO3Country()
+]]c) Response.getISO3Country()
+]]d) Local.retrieveISO3Country()
+]]A
+!!
+904
+]]4
+]]Which of the following code retrieves the body of the request as binary data?
+]]a) DataInputStream data = new InputStream()
+]]b) DataInputStream data = response.getInputStream()
+]]c) DataInputStream data = request.getInputStream()
+]]d) DataInputStream data = request.fetchInputStream()
+]]C
+!!

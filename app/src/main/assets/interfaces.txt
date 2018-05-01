@@ -1,34 +1,47 @@
-101
+601
 ]]
 1
 ]]
-Which of these standard collection classes implements a dynamic array?
+1. Which of these keywords is used to define interfaces in Java?
 ]]
-a) AbstractList
-]]
-b) LinkedList
-]]
-c) ArrayList
-]]
-d) AbstractSet
-]]
-C
+ a) interface]]
+ b) Interface]]
+ c) intf]]
+ d) Intf]]
+A
 !!
-102
+602
 ]]
 2
 ]]
-Which of these class can generate an array which can increase and decrease in size automatically?
+2. Which of these can be used to fully abstract a class from its implementation?]]
+ a) Objects]]
+ b) Packages]]
+ c) Interfaces]]
+ d) None of the Mentioned]]
+C
+!!
+603
 ]]
- a) ArrayList()
+3
 ]]
- b) DynamicList()
-]]
- c) LinkedList()
-]]
- d) DynamicList()
-]]
+3. Which of these access specifiers can be used for an interface?]]
+ a) Public ]]
+ b) Protected ]]
+ c) private ]]
+ d) All of the mentioned ]]
 A
+!!
+604
+]]
+4
+]]
+4. Which of these keywords is used by a class to use an interface defined previously?]]
+ a) import ]]
+ b) Import ]]
+ c) implements ]]
+ d) Implements ]]
+C
 !!
 
 

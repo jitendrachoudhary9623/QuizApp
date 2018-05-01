@@ -1,35 +1,27 @@
-101
-]]
-1
-]]
-Which of these standard collection classes implements a dynamic array?
-]]
-a) AbstractList
-]]
-b) LinkedList
-]]
-c) ArrayList
-]]
-d) AbstractSet
-]]
-C
+501
+]]1
+]]Which is true?
+]]"X extends Y" is correct if and only if X is a class and Y is an interface
+]]"X extends Y" is correct if and only if X is an interface and Y is a class
+]]"X extends Y" is correct if X and Y are either both classes or both interfaces
+]]"X extends Y" is correct for all combinations of X and Y being classes and/or interfaces
+]]C
 !!
-102
-]]
-2
-]]
-Which of these class can generate an array which can increase and decrease in size automatically?
-]]
- a) ArrayList()
-]]
- b) DynamicList()
-]]
- c) LinkedList()
-]]
- d) DynamicList()
-]]
-A
+502
+]]2
+]]Which of these keyword can be used in subclass to call the constructor of superclass?
+]] a) super
+]] b) this
+]] c) extent
+]] d) extends
+]]D
 !!
-
-
-
+503
+]]3
+]]What is the process of defining a method in subclass having same name & type signature as a method in its superclass?
+]] a) Method overloading
+]]b) Method overriding
+]]c) Method hiding
+]] d) None of the mentioned
+]]B
+!!
