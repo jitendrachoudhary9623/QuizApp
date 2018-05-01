@@ -21,7 +21,9 @@ import com.quizapp.jitcodez.quizapp.database.QuizContract;
 import com.quizapp.jitcodez.quizapp.database.QuizQuestion;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
+import java.util.Random;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -52,6 +54,7 @@ public class QuestionFragment extends Fragment {
         questionList=getArguments().getParcelableArrayList("Questions");
         questionNo=getArguments().getInt(QuizContract.QuizEntry.QUESTION_NO);
         score=getArguments().getInt("SCORE");
+        Collections.shuffle(questionList,new Random(5));
        // Toast.makeText(getContext(),questionList.get(0).getQuestion(),Toast.LENGTH_LONG).show();
 if(questionList.size()!=0) {
     questionText = (TextView) root.findViewById(R.id.question_text);
@@ -80,8 +83,8 @@ if(questionList.size()!=0) {
             scoreText.setText("" + score + "/" + (questionNo + 1));
             ma = new MarkedAnswers();
             ma.setQuestion(questionText.getText().toString());
-            ma.setMarkedAns(marked_ans);
-            ma.setCorrectAns(correct_ans);
+            ma.setMarkedAns(marked_ans+"\t"+option_A.getText().toString());
+            ma.setCorrectAns(correct_ans+"\t"+getCorrect_ans(correct_ans));
             answersList.add(ma);
             check = checkIfCorrect(correct_ans, marked_ans);
             if (check == false) {
@@ -96,6 +99,8 @@ if(questionList.size()!=0) {
                 mediaPlayer = MediaPlayer.create(getContext(), R.raw.right_ans);
                 mediaPlayer.start();
             }
+            option_A.setEnabled(false);
+
             option_B.setEnabled(false);
             option_C.setEnabled(false);
             option_D.setEnabled(false);
@@ -112,8 +117,8 @@ if(questionList.size()!=0) {
             marked_ans = "B";
             ma = new MarkedAnswers();
             ma.setQuestion(questionText.getText().toString());
-            ma.setMarkedAns(marked_ans);
-            ma.setCorrectAns(correct_ans);
+            ma.setMarkedAns(marked_ans+"\t"+option_C.getText().toString());
+            ma.setCorrectAns(correct_ans+"\t"+getCorrect_ans(correct_ans));
             answersList.add(ma);
             check = checkIfCorrect(correct_ans, marked_ans);
             if (check == false) {
@@ -128,6 +133,8 @@ if(questionList.size()!=0) {
                 mediaPlayer = MediaPlayer.create(getContext(), R.raw.right_ans);
                 mediaPlayer.start();
             }
+            option_B.setEnabled(false);
+
             option_A.setEnabled(false);
             option_C.setEnabled(false);
             option_D.setEnabled(false);
@@ -144,8 +151,8 @@ if(questionList.size()!=0) {
             marked_ans = "C";
             ma = new MarkedAnswers();
             ma.setQuestion(questionText.getText().toString());
-            ma.setMarkedAns(marked_ans);
-            ma.setCorrectAns(correct_ans);
+            ma.setMarkedAns(marked_ans+"\t"+option_C.getText().toString());
+            ma.setCorrectAns(correct_ans+"\t"+getCorrect_ans(correct_ans));
             answersList.add(ma);
 
             check = checkIfCorrect(correct_ans, marked_ans);
@@ -161,6 +168,8 @@ if(questionList.size()!=0) {
                 mediaPlayer = MediaPlayer.create(getContext(), R.raw.right_ans);
                 mediaPlayer.start();
             }
+            option_C.setEnabled(false);
+
             option_B.setEnabled(false);
             option_A.setEnabled(false);
             option_D.setEnabled(false);
@@ -177,8 +186,8 @@ if(questionList.size()!=0) {
             marked_ans = "D";
             ma = new MarkedAnswers();
             ma.setQuestion(questionText.getText().toString());
-            ma.setMarkedAns(marked_ans);
-            ma.setCorrectAns(correct_ans);
+            ma.setMarkedAns(marked_ans+"\t"+option_D.getText().toString());
+            ma.setCorrectAns(correct_ans+"\t"+getCorrect_ans(correct_ans));
             answersList.add(ma);
             check = checkIfCorrect(correct_ans, marked_ans);
             if (check == false) {
@@ -193,6 +202,8 @@ if(questionList.size()!=0) {
                 mediaPlayer = MediaPlayer.create(getContext(), R.raw.right_ans);
                 mediaPlayer.start();
             }
+            option_D.setEnabled(false);
+
             option_B.setEnabled(false);
             option_C.setEnabled(false);
             option_A.setEnabled(false);
@@ -261,5 +272,23 @@ if(questionList.size()!=0) {
 
         return false;
     }
+    }
+
+    public String getCorrect_ans(String ans)
+    {
+        switch (ans)
+        {
+            case "A":
+                return option_A.getText().toString();
+            case "B":
+                return option_B.getText().toString();
+            case "C":
+                return option_C.getText().toString();
+            case "D":
+                return option_D.getText().toString();
+
+        }
+        return "";
+
     }
 }

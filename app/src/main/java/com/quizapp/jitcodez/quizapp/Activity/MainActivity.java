@@ -18,6 +18,8 @@ import com.quizapp.jitcodez.quizapp.database.Category;
 import java.util.ArrayList;
 import java.util.List;
 
+import hotchemi.android.rate.AppRate;
+
 public class MainActivity extends AppCompatActivity {
     Button start_quiz;
     @Override
@@ -59,5 +61,6 @@ public class MainActivity extends AppCompatActivity {
 
         CategoryAdapter categoryAdapter=new CategoryAdapter(categoryList,this);
         rv.setAdapter(categoryAdapter);
+
     }
 }

@@ -10,11 +10,6 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".Activity.MainActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity android:name=".Activity.QuizActivity" />
 
@@ -24,7 +19,16 @@
             android:enabled="true"
             android:exported="true" />
 
-        <activity android:name=".Activity.ScoreActivity"></activity>
+        <activity android:name=".Activity.ScoreActivity"
+            android:parentActivityName=".Activity.MainActivity"/>
+        <activity android:name=".SplashScreen"
+            android:theme="@style/SplashAppTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>
