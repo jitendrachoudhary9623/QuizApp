@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:title="" />
+    <item android:title="" />
+    <item android:title="" />
+    <item android:title="" />
+
+
+    <item android:title="Theory"
+        android:id="@+id/nav_theory"
+        />
+
+    <item android:title="Quiz"
+        android:id="@+id/nav_quiz"
+        />
+
+    <item android:title="Programs"
+        android:id="@+id/nav_pgm"/>
+    <item android:title="Interview Questions"
+        android:id="@+id/nav_interview"/>
+
+
+    <item android:title="Others">
+        <menu>
+            <item
+                android:title="Rate US"
+               />
+            <item
+                android:title="Share"
+               />
+        </menu>
+    </item>
+
+ <!--   <group android:id="@+id/group_settings_id">
+
+        <item android:title="Settings"
+            />
+        <item android:title="Help"
+            />
+    </group>-->
+
+
+</menu>

@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import com.quizapp.jitcodez.quizapp.Activity.MainActivity;
+import com.quizapp.jitcodez.quizapp.Activity.TabActivity;
 
 public class SplashScreen extends AppCompatActivity {
 
@@ -16,7 +17,7 @@ public class SplashScreen extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent i=new Intent(SplashScreen.this, MainActivity.class);
+                Intent i=new Intent(SplashScreen.this, TabActivity.class);
                 startActivity(i);
             }
         },3000);
