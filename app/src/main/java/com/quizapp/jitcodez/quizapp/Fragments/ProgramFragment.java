@@ -68,6 +68,7 @@ public class ProgramFragment extends Fragment {
 
         }
         else {
+            Toast.makeText(getContext(),"Getting",Toast.LENGTH_SHORT).show();
             new ProgramList().execute();
         }
 
@@ -88,6 +89,7 @@ public class ProgramFragment extends Fragment {
         Gson gson = new Gson();
         String json = prefs.getString(key, null);
         Type type = new TypeToken<ArrayList<Program>>() {}.getType();
+        Toast.makeText(getContext(),"Program shared",Toast.LENGTH_SHORT).show();
         return gson.fromJson(json, type);
     }
 
@@ -106,6 +108,8 @@ public class ProgramFragment extends Fragment {
                 Response<List<Program>> newPostResponse = caller.execute();
                 if (newPostResponse.isSuccessful()) {
                     rp = newPostResponse.body();
+                    Log.d("Program",""+rp.toString());
+
                 }
 
 
@@ -122,7 +126,9 @@ public class ProgramFragment extends Fragment {
         protected void onPostExecute(List<Program> Programs) {
             super.onPostExecute(Programs);
             if (Programs != null) {
-               setupRecycler(Programs);
+                Toast.makeText(getContext(),"Program not shared",Toast.LENGTH_SHORT).show();
+                saveArrayList(Programs,"programs");
+                setupRecycler(Programs);
             }
         }
 

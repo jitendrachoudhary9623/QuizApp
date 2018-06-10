@@ -40,7 +40,9 @@
             android:name=".Activity.TabActivity"
             android:screenOrientation="portrait"
             android:theme="@style/TabTheme" />
-        <activity android:name=".Activity.ProgramActivity"></activity>
+        <activity android:name=".Activity.ProgramActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppFullScreenTheme"></activity>
     </application>
 
 </manifest>

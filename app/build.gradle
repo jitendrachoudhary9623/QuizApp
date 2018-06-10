@@ -34,4 +34,7 @@ dependencies {
     compile 'com.google.code.gson:gson:2.6.2'
     compile 'com.squareup.retrofit2:converter-gson:2.0.2'
 
+
+    //codeview
+    compile 'com.github.kbiakov:CodeView-android:1.3.1'
 }
