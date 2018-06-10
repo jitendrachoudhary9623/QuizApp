@@ -12,8 +12,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
+import com.quizapp.jitcodez.quizapp.Adapters.NonTechInterviewAdapter;
 import com.quizapp.jitcodez.quizapp.Adapters.TheoryAdapter;
 import com.quizapp.jitcodez.quizapp.R;
+import com.quizapp.jitcodez.quizapp.database.Interview;
 import com.quizapp.jitcodez.quizapp.database.Theory;
 
 import java.util.ArrayList;
@@ -40,6 +42,34 @@ public class TheoryFragment extends Fragment {
         rc.setAdapter(pg);
         rc.setLayoutManager(new LinearLayoutManager(getContext()));
         rc.setItemAnimator(new DefaultItemAnimator());
+/*
+
+        rc.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                        RecyclerView rc=(RecyclerView)root.findViewById(R.id.rc_theory_view_subsection);
+                        List<Interview> techInterviewList=new ArrayList<Interview>();
+                        int a=0;
+                        Interview p1=new Interview(1,2,"Implement a Stack  ","");
+                        techInterviewList.add(p1);
+                        while(a!=4){
+                            Interview p=new Interview(1,2,"Programming Question: Given A Program check the parenthisis of the code in minimum number of lines . The choice of language is yours ","");
+                            techInterviewList.add(p);
+                            p=new Interview(1,2,"Time complexity of Quick Sort","");
+                            techInterviewList.add(p);
+                            a++;
+                        }
+                        NonTechInterviewAdapter nonTech=new NonTechInterviewAdapter(getContext(),techInterviewList);
+
+                        rc.setAdapter(nonTech);
+                        rc.setLayoutManager(new LinearLayoutManager(getContext()));
+                        rc.setItemAnimator(new DefaultItemAnimator());
+                        rc.hasFixedSize();
+                    }
+                });
+*/
+
         return root;
     }
 }

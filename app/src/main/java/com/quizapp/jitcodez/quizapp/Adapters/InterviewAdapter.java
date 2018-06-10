@@ -19,7 +19,10 @@ public class InterviewAdapter extends RecyclerView.Adapter<InterviewAdapter.Inte
 
     List<Interview> interviewList;
     Context cntx;
-
+    /*
+    1 for non tech
+    2 for tech
+     */
     public InterviewAdapter(Context cntx,List<Interview> interviewList){
         this.cntx=cntx;
         this.interviewList=interviewList;
@@ -27,6 +30,7 @@ public class InterviewAdapter extends RecyclerView.Adapter<InterviewAdapter.Inte
     @NonNull
     @Override
     public InterviewViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+
         View item= LayoutInflater.from(cntx).inflate(R.layout.rc_interview,parent,false);
         InterviewViewHolder viewHolder=new InterviewViewHolder(item);
         return viewHolder;    }
@@ -52,7 +56,8 @@ public class InterviewAdapter extends RecyclerView.Adapter<InterviewAdapter.Inte
         }
         public void bind(final int position)
         {
-            title.setText(""+interviewList.get(position).getTitle());
+
+            title.setText(""+interviewList.get(position).getInterviewQuestion());
         }
     }
 }

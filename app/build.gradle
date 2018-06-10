@@ -30,4 +30,8 @@ dependencies {
     implementation 'com.android.support:recyclerview-v7:27.1.1'
     compile 'com.github.hotchemi:android-rate:1.0.1'
     compile 'com.android.support:design:27.1.1'
+    compile 'com.squareup.retrofit2:retrofit:2.4.0'
+    compile 'com.google.code.gson:gson:2.6.2'
+    compile 'com.squareup.retrofit2:converter-gson:2.0.2'
+
 }
