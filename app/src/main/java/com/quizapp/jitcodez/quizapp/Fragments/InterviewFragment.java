@@ -62,7 +62,6 @@ public class InterviewFragment extends Fragment {
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         sharedpreferences =  PreferenceManager.getDefaultSharedPreferences(getActivity());//getActivity().getSharedPreferences("pref", Context.MODE_PRIVATE);
-     //   if(savedInstanceState==null) {
         if(sharedpreferences.contains("techInterview")&&sharedpreferences.contains("nonTechInterview")){
             setupRecyclerViews(getArrayList("techInterview"),getArrayList("nonTechInterview"));
 
@@ -70,14 +69,7 @@ public class InterviewFragment extends Fragment {
         else {
             new InterviewList().execute();
         }
-     //   }
-      /*  else
-        {
-            rp.clear();
-            rp=null; ArrayList<String> nonTech
-            rp=savedInstanceState.getParcelableArrayList(Constants.RecipeList);
-            setupRecyclerView(rp);
-        }*/
+
     }
 
 
@@ -95,7 +87,7 @@ public class InterviewFragment extends Fragment {
         Gson gson = new Gson();
         String json = prefs.getString(key, null);
         Type type = new TypeToken<ArrayList<Interview>>() {}.getType();
-        Toast.makeText(getContext(),"Loading from shared pref",Toast.LENGTH_SHORT).show();
+      //  Toast.makeText(getContext(),"Loading from shared pref",Toast.LENGTH_SHORT).show();
         return gson.fromJson(json, type);
     }
     public void setupRecyclerViews(List<Interview> tech,List<Interview> nonTech)

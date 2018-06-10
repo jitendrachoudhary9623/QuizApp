@@ -1,90 +1,114 @@
+
 package com.quizapp.jitcodez.quizapp.database;
 
 import android.os.Parcel;
 import android.os.Parcelable;
+import android.os.Parcelable.Creator;
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
 
-public class Program implements Parcelable {
-    String title;
-    String code;
-    String input;
-    String output;
+public class Program implements Parcelable
+{
 
-    protected Program(Parcel in) {
-        title = in.readString();
-        code = in.readString();
-        input = in.readString();
-        output = in.readString();
-    }
+    @SerializedName("program_id")
+    @Expose
+    private String programId;
+    @SerializedName("program_statement")
+    @Expose
+    private String programStatement;
+    @SerializedName("program_code")
+    @Expose
+    private String programCode;
+    @SerializedName("program_output")
+    @Expose
+    private String programOutput;
+    public final static Creator<Program> CREATOR = new Creator<Program>() {
 
-    public static final Creator<Program> CREATOR = new Creator<Program>() {
-        @Override
+
+        @SuppressWarnings({
+            "unchecked"
+        })
         public Program createFromParcel(Parcel in) {
             return new Program(in);
         }
 
-        @Override
         public Program[] newArray(int size) {
-            return new Program[size];
+            return (new Program[size]);
         }
-    };
 
+    }
+    ;
+
+    protected Program(Parcel in) {
+        this.programId = ((String) in.readValue((String.class.getClassLoader())));
+        this.programStatement = ((String) in.readValue((String.class.getClassLoader())));
+        this.programCode = ((String) in.readValue((String.class.getClassLoader())));
+        this.programOutput = ((String) in.readValue((String.class.getClassLoader())));
+    }
+
+    /**
+     * No args constructor for use in serialization
+     * 
+     */
     public Program() {
     }
 
-    public String getTitle() {
-        return title;
+    /**
+     * 
+     * @param programStatement
+     * @param programId
+     * @param programCode
+     * @param programOutput
+     */
+    public Program(String programId, String programStatement, String programCode, String programOutput) {
+        super();
+        this.programId = programId;
+        this.programStatement = programStatement;
+        this.programCode = programCode;
+        this.programOutput = programOutput;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
+    public String getProgramId() {
+        return programId;
     }
 
-    public String getCode() {
-        return code;
+    public void setProgramId(String programId) {
+        this.programId = programId;
     }
 
-    public void setCode(String code) {
-        this.code = code;
+    public String getProgramStatement() {
+        return programStatement;
     }
 
-    public String getInput() {
-        return input;
+    public void setProgramStatement(String programStatement) {
+        this.programStatement = programStatement;
     }
 
-    public void setInput(String input) {
-        this.input = input;
+    public String getProgramCode() {
+        return programCode;
     }
 
-    public String getOutput() {
-        return output;
+    public void setProgramCode(String programCode) {
+        this.programCode = programCode;
     }
 
-    public void setOutput(String output) {
-        this.output = output;
+    public String getProgramOutput() {
+        return programOutput;
     }
 
-    public static Creator<Program> getCREATOR() {
-        return CREATOR;
+    public void setProgramOutput(String programOutput) {
+        this.programOutput = programOutput;
     }
 
-    public Program(String title, String code, String input, String output) {
-
-        this.title = title;
-        this.code = code;
-        this.input = input;
-        this.output = output;
-    }
-
-    @Override
-    public int describeContents() {
-        return 0;
-    }
-
-    @Override
     public void writeToParcel(Parcel dest, int flags) {
-        dest.writeString(title);
-        dest.writeString(code);
-        dest.writeString(input);
-        dest.writeString(output);
+        dest.writeValue(programId);
+        dest.writeValue(programStatement);
+        dest.writeValue(programCode);
+        dest.writeValue(programOutput);
     }
+
+    public int describeContents() {
+        return  0;
+    }
+
 }

@@ -51,7 +51,7 @@ public class ProgramAdapter extends RecyclerView.Adapter<ProgramAdapter.ProgramV
         public void bind(final int position)
         {
             counter.setText(""+(position+1));
-            title.setText(""+pgmList.get(position).getTitle());
+            title.setText(""+pgmList.get(position).getProgramStatement());
         }
     }
 }
