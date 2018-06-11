@@ -7,21 +7,17 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="horizontal">
-    <android.support.v7.widget.RecyclerView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/rc_theory_view"
-        android:layout_margin="@dimen/five_dp"
-        android:layout_weight="1.8">
 
-    </android.support.v7.widget.RecyclerView>
-        <android.support.v7.widget.RecyclerView
+        <FrameLayout
+            android:id="@+id/section_holder"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:id="@+id/rc_theory_view_subsection"
-            android:layout_margin="@dimen/five_dp"
-            android:layout_weight="1">
+            android:layout_weight="1.2"></FrameLayout>
 
-        </android.support.v7.widget.RecyclerView>
+        <FrameLayout
+            android:id="@+id/sub_section_holder"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"></FrameLayout>
     </LinearLayout>
 </RelativeLayout>

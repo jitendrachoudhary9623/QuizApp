@@ -1,123 +1,100 @@
+
 package com.quizapp.jitcodez.quizapp.database;
 
+import java.util.List;
 import android.os.Parcel;
 import android.os.Parcelable;
+import android.os.Parcelable.Creator;
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
 
-public class Theory implements Parcelable{
-    String title;
-    String introduction;
-    String section1;
-    String section2;
-    String section3;
-    String section4;
-    String section5;
+public class Theory implements Parcelable
+{
 
-    protected Theory(Parcel in) {
-        title = in.readString();
-        introduction = in.readString();
-        section1 = in.readString();
-        section2 = in.readString();
-        section3 = in.readString();
-        section4 = in.readString();
-        section5 = in.readString();
-    }
+    @SerializedName("section_id")
+    @Expose
+    private String sectionId;
+    @SerializedName("section_title")
+    @Expose
+    private String sectionTitle;
+    @SerializedName("subsections")
+    @Expose
+    private List<Subsection> subsections = null;
+    public final static Creator<Theory> CREATOR = new Creator<Theory>() {
 
-    public static final Creator<Theory> CREATOR = new Creator<Theory>() {
-        @Override
+
+        @SuppressWarnings({
+            "unchecked"
+        })
         public Theory createFromParcel(Parcel in) {
             return new Theory(in);
         }
 
-        @Override
         public Theory[] newArray(int size) {
-            return new Theory[size];
+            return (new Theory[size]);
         }
-    };
 
-    public String getTitle() {
-        return title;
+    }
+    ;
+
+    protected Theory(Parcel in) {
+        this.sectionId = ((String) in.readValue((String.class.getClassLoader())));
+        this.sectionTitle = ((String) in.readValue((String.class.getClassLoader())));
+        in.readList(this.subsections, (Subsection.class.getClassLoader()));
     }
 
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public String getIntroduction() {
-        return introduction;
-    }
-
-    public void setIntroduction(String introduction) {
-        this.introduction = introduction;
-    }
-
-    public String getSection1() {
-        return section1;
-    }
-
-    public void setSection1(String section1) {
-        this.section1 = section1;
-    }
-
-    public String getSection2() {
-        return section2;
-    }
-
-    public void setSection2(String section2) {
-        this.section2 = section2;
-    }
-
-    public String getSection3() {
-        return section3;
-    }
-
-    public void setSection3(String section3) {
-        this.section3 = section3;
-    }
-
-    public String getSection4() {
-        return section4;
-    }
-
-    public void setSection4(String section4) {
-        this.section4 = section4;
-    }
-
-    public String getSection5() {
-        return section5;
-    }
-
-    public void setSection5(String section5) {
-        this.section5 = section5;
-    }
-
+    /**
+     * No args constructor for use in serialization
+     * 
+     */
     public Theory() {
-
     }
 
-    public Theory(String title, String introduction, String section1, String section2, String section3, String section4, String section5) {
-
-        this.title = title;
-        this.introduction = introduction;
-        this.section1 = section1;
-        this.section2 = section2;
-        this.section3 = section3;
-        this.section4 = section4;
-        this.section5 = section5;
+    /**
+     * 
+     * @param subsections
+     * @param sectionTitle
+     * @param sectionId
+     */
+    public Theory(String sectionId, String sectionTitle, List<Subsection> subsections) {
+        super();
+        this.sectionId = sectionId;
+        this.sectionTitle = sectionTitle;
+        this.subsections = subsections;
     }
 
-    @Override
-    public int describeContents() {
-        return 0;
+    public String getSectionId() {
+        return sectionId;
     }
 
-    @Override
+    public void setSectionId(String sectionId) {
+        this.sectionId = sectionId;
+    }
+
+    public String getSectionTitle() {
+        return sectionTitle;
+    }
+
+    public void setSectionTitle(String sectionTitle) {
+        this.sectionTitle = sectionTitle;
+    }
+
+    public List<Subsection> getSubsections() {
+        return subsections;
+    }
+
+    public void setSubsections(List<Subsection> subsections) {
+        this.subsections = subsections;
+    }
+
     public void writeToParcel(Parcel dest, int flags) {
-        dest.writeString(title);
-        dest.writeString(introduction);
-        dest.writeString(section1);
-        dest.writeString(section2);
-        dest.writeString(section3);
-        dest.writeString(section4);
-        dest.writeString(section5);
+        dest.writeValue(sectionId);
+        dest.writeValue(sectionTitle);
+        dest.writeList(subsections);
     }
+
+    public int describeContents() {
+        return  0;
+    }
+
 }
