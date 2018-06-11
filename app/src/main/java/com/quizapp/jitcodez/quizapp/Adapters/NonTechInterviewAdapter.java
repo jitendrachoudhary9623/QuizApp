@@ -1,6 +1,7 @@
 package com.quizapp.jitcodez.quizapp.Adapters;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -8,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.quizapp.jitcodez.quizapp.Activity.InterviewActivity;
 import com.quizapp.jitcodez.quizapp.R;
 import com.quizapp.jitcodez.quizapp.database.Interview;
 
@@ -76,6 +78,15 @@ public class NonTechInterviewAdapter extends RecyclerView.Adapter<NonTechIntervi
 
             }
             title.setText(""+interviewList.get(position).getInterviewQuestion());
+            title.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent in=new Intent(cntx,InterviewActivity.class);
+                    Interview p=interviewList.get(position);
+                    in.putExtra("interview",p);
+                    cntx.startActivity(in);
+                }
+            });
         }
     }
 }
