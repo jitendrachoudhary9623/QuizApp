@@ -1,6 +1,7 @@
 package com.quizapp.jitcodez.quizapp.Adapters;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Parcelable;
 import android.support.annotation.NonNull;
@@ -11,9 +12,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.quizapp.jitcodez.quizapp.Activity.InterviewActivity;
 import com.quizapp.jitcodez.quizapp.Activity.MainActivity;
+import com.quizapp.jitcodez.quizapp.Activity.SectionActivity;
 import com.quizapp.jitcodez.quizapp.Fragments.SubsectionFragment;
 import com.quizapp.jitcodez.quizapp.R;
+import com.quizapp.jitcodez.quizapp.database.Interview;
 import com.quizapp.jitcodez.quizapp.database.Subsection;
 
 import java.util.ArrayList;
@@ -77,6 +81,16 @@ holder.bind(position);
             }
 
             title.setText(""+SubsectionList.get(position).getTitle());
+            title.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent in=new Intent(cntx, SectionActivity.class);
+                    Subsection p=SubsectionList.get(position);
+                    in.putParcelableArrayListExtra("subsections", (ArrayList<? extends Parcelable>) SubsectionList);
+                    in.putExtra("subsection_post",position);
+                    cntx.startActivity(in);
+                }
+            });
 
         }
     }

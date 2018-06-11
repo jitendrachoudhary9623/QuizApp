@@ -46,9 +46,13 @@
             android:name=".Activity.ProgramActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppFullScreenTheme" />
-        <activity android:name=".Activity.InterviewActivity"
+        <activity
+            android:name=".Activity.InterviewActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/AppFullScreenTheme2" ></activity>
+            android:theme="@style/AppFullScreenTheme2" />
+        <activity android:name=".Activity.SectionActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppFullScreenTheme2"></activity>
     </application>
 
 </manifest>

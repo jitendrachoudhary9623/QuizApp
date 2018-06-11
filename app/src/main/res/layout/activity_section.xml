@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activity.SectionActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:layout_weight="8">
+    <TextView
+        android:id="@+id/section_prev"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="3"
+        android:text=" PREV"
+
+        android:background="@color/blue"
+        android:textColor="@android:color/white"
+        android:textStyle="bold"
+        android:textSize="15sp"
+        android:gravity="center_horizontal|center_vertical"/>
+        <TextView
+            android:id="@+id/section_title"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="Section"
+
+            android:background="@color/blue"
+            android:textColor="@android:color/white"
+            android:textStyle="bold"
+            android:textSize="15sp"
+            android:gravity="center_horizontal|center_vertical"/>
+        <TextView
+            android:id="@+id/section_next"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="3"
+            android:text="Next >>"
+
+            android:background="@color/blue"
+            android:textColor="@android:color/white"
+            android:textStyle="bold"
+            android:textSize="15sp"
+            android:gravity="center_horizontal|center_vertical"/>
+    </LinearLayout>
+<!--
+        <io.github.kbiakov.codeview.CodeView
+            android:id="@+id/section_view"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:fitsSystemWindows="true"/>-->
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            >  <TextView
+            android:layout_margin="15dp"
+
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/section_view"
+            android:textStyle="bold"
+            android:textSize="15sp"
+            />
+</ScrollView>
+
+</LinearLayout>
+</RelativeLayout>
