@@ -2,6 +2,7 @@ package com.quizapp.jitcodez.quizapp.Adapters;
 
 import android.content.Context;
 import android.content.Intent;
+import android.os.Parcelable;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -13,6 +14,7 @@ import com.quizapp.jitcodez.quizapp.Activity.InterviewActivity;
 import com.quizapp.jitcodez.quizapp.R;
 import com.quizapp.jitcodez.quizapp.database.Interview;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class NonTechInterviewAdapter extends RecyclerView.Adapter<NonTechInterviewAdapter.NonTechInterviewViewHolder>{
@@ -83,7 +85,8 @@ public class NonTechInterviewAdapter extends RecyclerView.Adapter<NonTechIntervi
                 public void onClick(View v) {
                     Intent in=new Intent(cntx,InterviewActivity.class);
                     Interview p=interviewList.get(position);
-                    in.putExtra("interview",p);
+                    in.putParcelableArrayListExtra("interview", (ArrayList<? extends Parcelable>) interviewList);
+                    in.putExtra("interview_post",position);
                     cntx.startActivity(in);
                 }
             });
