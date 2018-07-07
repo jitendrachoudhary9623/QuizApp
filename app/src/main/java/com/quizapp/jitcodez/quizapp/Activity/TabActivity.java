@@ -1,5 +1,7 @@
 package com.quizapp.jitcodez.quizapp.Activity;
 
+import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.TabLayout;
@@ -9,10 +11,14 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import com.quizapp.jitcodez.quizapp.Adapters.PagerAdapter;
 import com.quizapp.jitcodez.quizapp.R;
+import com.quizapp.jitcodez.quizapp.Utils.Constants;
 
 public class TabActivity extends AppCompatActivity {
     private DrawerLayout mDrawerLayout;
@@ -84,6 +90,35 @@ public class TabActivity extends AppCompatActivity {
             }
             return true; } });
     }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu, menu);
+        return true;
+    }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            // action with ID action_refresh was selected
+            case R.id.action_update:
+                Toast.makeText(this, "The App data will be updated ", Toast.LENGTH_SHORT)
+                        .show();
+                SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+                SharedPreferences.Editor editor = prefs.edit();
+                editor.remove(Constants.Quiz);
+                editor.remove(Constants.Program);
+                editor.remove(Constants.nonTech);
+                editor.remove(Constants.tech);
+                editor.remove(Constants.Theory);
 
+                //  editor.remove("purchaseToken");
+               // editor.remove("orderId");
+                editor.commit();                break;
 
+            default:
+                break;
+        }
+
+        return true;
+    }
 }

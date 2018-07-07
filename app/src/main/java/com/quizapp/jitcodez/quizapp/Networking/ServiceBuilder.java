@@ -6,7 +6,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class ServiceBuilder {
 
-    private static final String URL="http://www.jitendra.xyz/androidPhp/";
+    private static final String URL="http://www.jitendra.xyz/quiz/php/";
     private  static Retrofit.Builder builder=new Retrofit.Builder().baseUrl(URL).addConverterFactory(GsonConverterFactory.create());
 
     private static Retrofit retrofit =builder.build();

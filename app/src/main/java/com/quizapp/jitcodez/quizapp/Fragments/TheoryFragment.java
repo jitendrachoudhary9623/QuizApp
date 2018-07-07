@@ -24,6 +24,7 @@ import com.quizapp.jitcodez.quizapp.Adapters.TheoryAdapter;
 import com.quizapp.jitcodez.quizapp.Networking.TheoryRetrofit;
 import com.quizapp.jitcodez.quizapp.Networking.ServiceBuilder;
 import com.quizapp.jitcodez.quizapp.R;
+import com.quizapp.jitcodez.quizapp.Utils.Constants;
 import com.quizapp.jitcodez.quizapp.database.Theory;
 import com.quizapp.jitcodez.quizapp.database.Theory;
 
@@ -45,8 +46,8 @@ public class TheoryFragment extends Fragment {
         final View root = inflater.inflate(R.layout.fragment_theory, container, false);
 
         sharedpreferences =  PreferenceManager.getDefaultSharedPreferences(getActivity());//getActivity().getSharedPreferences("pref", Context.MODE_PRIVATE);
-        if(sharedpreferences.contains("theory")){
-            rp=getArrayList("theory");
+        if(sharedpreferences.contains(Constants.Theory)){
+            rp=getArrayList(Constants.Theory);
 
         }
 
@@ -123,7 +124,7 @@ public class TheoryFragment extends Fragment {
             super.onPostExecute(Theorys);
             if (Theorys != null) {
                 rp= Theorys;
-                saveArrayList(rp,"theory");
+                saveArrayList(rp, Constants.Theory);
             }
         }
 

@@ -17,8 +17,9 @@ import android.widget.Toast;
 import com.quizapp.jitcodez.quizapp.Activity.ScoreActivity;
 import com.quizapp.jitcodez.quizapp.R;
 import com.quizapp.jitcodez.quizapp.database.MarkedAnswers;
+import com.quizapp.jitcodez.quizapp.database.Quiz;
 import com.quizapp.jitcodez.quizapp.database.QuizContract;
-import com.quizapp.jitcodez.quizapp.database.QuizQuestion;
+
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -35,7 +36,7 @@ public class QuestionFragment extends Fragment {
         // Required empty public constructor
     }
 
-    List<QuizQuestion> questionList=new ArrayList<QuizQuestion>();
+    List<Quiz> questionList=new ArrayList<Quiz>();
     List<MarkedAnswers> answersList=new ArrayList<>();
     int questionNo;
     TextView questionText,questionNumber,scoreText;
@@ -54,7 +55,7 @@ public class QuestionFragment extends Fragment {
         questionList=getArguments().getParcelableArrayList("Questions");
         questionNo=getArguments().getInt(QuizContract.QuizEntry.QUESTION_NO);
         score=getArguments().getInt("SCORE");
-        Collections.shuffle(questionList,new Random(5));
+        Collections.shuffle(questionList,new Random(50));
        // Toast.makeText(getContext(),questionList.get(0).getQuestion(),Toast.LENGTH_LONG).show();
 if(questionList.size()!=0) {
     questionText = (TextView) root.findViewById(R.id.question_text);
@@ -68,13 +69,13 @@ if(questionList.size()!=0) {
 
     scoreText.setText("" + score + "/" + (questionNo + 1));
     questionNumber.setText("Question " + (questionNo + 1));
-    QuizQuestion q = questionList.get(questionNo);
+    Quiz q = questionList.get(questionNo);
     questionText.setText(q.getQuestion());
     option_A.setText(q.getOptionA());
     option_B.setText(q.getOptionB());
     option_C.setText(q.getOptionC());
     option_D.setText(q.getOptionD());
-    correct_ans = q.getCorrectAns();
+    correct_ans = q.getAns();
     option_A.setOnClickListener(new View.OnClickListener() {
         @Override
         public void onClick(View v) {
@@ -117,7 +118,7 @@ if(questionList.size()!=0) {
             marked_ans = "B";
             ma = new MarkedAnswers();
             ma.setQuestion(questionText.getText().toString());
-            ma.setMarkedAns(marked_ans+"\t"+option_C.getText().toString());
+            ma.setMarkedAns(marked_ans+"\t"+option_B.getText().toString());
             ma.setCorrectAns(correct_ans+"\t"+getCorrect_ans(correct_ans));
             answersList.add(ma);
             check = checkIfCorrect(correct_ans, marked_ans);
@@ -233,13 +234,13 @@ if(questionList.size()!=0) {
                     questionNo++;
 
                     questionNumber.setText("Question " + (questionNo + 1));
-                    QuizQuestion q = questionList.get(questionNo);
+                    Quiz q = questionList.get(questionNo);
                     questionText.setText(q.getQuestion());
                     option_A.setText(q.getOptionA());
                     option_B.setText(q.getOptionB());
                     option_C.setText(q.getOptionC());
                     option_D.setText(q.getOptionD());
-                    correct_ans = q.getCorrectAns();
+                    correct_ans = q.getAns();
                 } else {
                     //  next.setVisibility(View.INVISIBLE);
                     //  Bundle bundle=new Bundle();

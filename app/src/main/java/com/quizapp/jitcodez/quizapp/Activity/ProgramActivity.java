@@ -1,13 +1,17 @@
 package com.quizapp.jitcodez.quizapp.Activity;
 
+import android.content.ClipData;
+import android.content.ClipboardManager;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.os.Build;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.quizapp.jitcodez.quizapp.R;
 import com.quizapp.jitcodez.quizapp.database.Program;
@@ -30,12 +34,13 @@ public class ProgramActivity extends AppCompatActivity {
         statement=(TextView)findViewById(R.id.program_statement);
 output=(TextView)findViewById(R.id.program_output);
         statement.setText(p.getProgramStatement());
-        String code=p.getProgramCode();
+        final String code=p.getProgramCode();
 
         codeView.setOptions(Options.Default.get(this)
                 .withLanguage("java")
                 .withCode(code)
                 .withTheme(ColorTheme.MONOKAI));
+
        // codeView.getOptions().setTheme(ColorTheme.SOLARIZED_LIGHT);
         //codeView.setCode(code);
         final Context cnt=this;
@@ -54,7 +59,16 @@ output=(TextView)findViewById(R.id.program_output);
                             public void onClick(DialogInterface dialog, int which) {
                                 // continue with delete
                             }
-                        })
+                        }).setNegativeButton("Copy Code", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        Log.d("code122","This is ");
+                        ClipboardManager clipboard = (ClipboardManager) getSystemService(CLIPBOARD_SERVICE);
+                        ClipData clip = ClipData.newPlainText("simple text", code);
+                        clipboard.setPrimaryClip(clip);
+                        Toast.makeText(getApplicationContext(), "String copied to Clipboard",
+                                Toast.LENGTH_LONG).show();
+                    }
+                })
 
                         .show();
             }

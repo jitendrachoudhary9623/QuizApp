@@ -100,10 +100,23 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.Catego
                     break;
 
             }
-            Category c = categoryList.get(position);
-            final String cat=c.getCategory();
+            final Category c = categoryList.get(position);
+            final String cat=c.getCategoryName();
             category.setText(cat);
             category.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if(c.getQuiz().size()>0) {
+                        Intent i = new Intent(mContext, QuizActivity.class);
+                        i.putParcelableArrayListExtra("questionList", (ArrayList<? extends Parcelable>) c.getQuiz());
+                        mContext.startActivity(i);
+                    }
+                    else{
+                        Toast.makeText(mContext,"The Quiz is under construction",Toast.LENGTH_SHORT).show();
+                    }
+                }
+            });
+          /*  category.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     String filename="";
@@ -172,7 +185,7 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.Catego
                     i.putParcelableArrayListExtra("questionList", (ArrayList<? extends Parcelable>) questionList);
                     mContext.startActivity(i);
                 }
-            });
+            });*/
         }
 
 

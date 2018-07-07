@@ -25,6 +25,7 @@ import com.quizapp.jitcodez.quizapp.Adapters.ProgramAdapter;
 import com.quizapp.jitcodez.quizapp.Networking.InterviewRetrofit;
 import com.quizapp.jitcodez.quizapp.Networking.ServiceBuilder;
 import com.quizapp.jitcodez.quizapp.R;
+import com.quizapp.jitcodez.quizapp.Utils.Constants;
 import com.quizapp.jitcodez.quizapp.database.Interview;
 import com.quizapp.jitcodez.quizapp.database.Program;
 
@@ -62,8 +63,8 @@ public class InterviewFragment extends Fragment {
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         sharedpreferences =  PreferenceManager.getDefaultSharedPreferences(getActivity());//getActivity().getSharedPreferences("pref", Context.MODE_PRIVATE);
-        if(sharedpreferences.contains("techInterview")&&sharedpreferences.contains("nonTechInterview")){
-            setupRecyclerViews(getArrayList("techInterview"),getArrayList("nonTechInterview"));
+        if(sharedpreferences.contains(Constants.tech)&&sharedpreferences.contains(Constants.nonTech)){
+            setupRecyclerViews(getArrayList(Constants.tech),getArrayList(Constants.nonTech));
 
         }
         else {
@@ -155,8 +156,8 @@ public class InterviewFragment extends Fragment {
                     techInterviewList.add(i);
                 }
             }
-            saveArrayList(techInterviewList,"techInterview");
-            saveArrayList(nonTechInterviewList,"nonTechInterview");
+            saveArrayList(techInterviewList, Constants.tech);
+            saveArrayList(nonTechInterviewList,Constants.nonTech);
             setupRecyclerViews(techInterviewList,nonTechInterviewList);
                      //tech = new InterviewAdapter(getContext(), nonTechInterviewList);
 

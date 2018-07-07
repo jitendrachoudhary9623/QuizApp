@@ -22,6 +22,7 @@ import com.quizapp.jitcodez.quizapp.Adapters.ProgramAdapter;
 import com.quizapp.jitcodez.quizapp.Networking.ProgramRetrofit;
 import com.quizapp.jitcodez.quizapp.Networking.ServiceBuilder;
 import com.quizapp.jitcodez.quizapp.R;
+import com.quizapp.jitcodez.quizapp.Utils.Constants;
 import com.quizapp.jitcodez.quizapp.database.Interview;
 import com.quizapp.jitcodez.quizapp.database.Program;
 import com.quizapp.jitcodez.quizapp.database.Program;
@@ -63,8 +64,8 @@ public class ProgramFragment extends Fragment {
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         sharedpreferences =  PreferenceManager.getDefaultSharedPreferences(getActivity());//getActivity().getSharedPreferences("pref", Context.MODE_PRIVATE);
-        if(sharedpreferences.contains("programs")){
-            setupRecycler(getArrayList("programs"));
+        if(sharedpreferences.contains(Constants.Program)){
+            setupRecycler(getArrayList(Constants.Program));
 
         }
         else {
@@ -126,8 +127,9 @@ public class ProgramFragment extends Fragment {
         protected void onPostExecute(List<Program> Programs) {
             super.onPostExecute(Programs);
             if (Programs != null) {
-                Toast.makeText(getContext(),"Program not shared",Toast.LENGTH_SHORT).show();
-                saveArrayList(Programs,"programs");
+
+           //     Toast.makeText(getContext(),"Program not shared",Toast.LENGTH_SHORT).show();
+                saveArrayList(Programs, Constants.Program);
                 setupRecycler(Programs);
             }
         }

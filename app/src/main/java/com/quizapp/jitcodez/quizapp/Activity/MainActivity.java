@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
         rv.setLayoutManager(new GridLayoutManager(this,2));
 
         List<Category> categoryList=new ArrayList<Category>();
-        categoryList.add(new Category("Data Types, Variables and Arrays"));
+      /*  categoryList.add(new Category("Data Types, Variables and Arrays"));
         categoryList.add(new Category("Operators and Control Statements"));
         categoryList.add(new Category("Java Environment & OOPS Concepts"));
         categoryList.add(new Category("Classes and Methods"));
@@ -59,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
         categoryList.add(new Category("Generics"));
         categoryList.add(new Category("Java Beans & JDBC"));
         categoryList.add(new Category("Java Server Technologies & Servlet"));
-
+*/
         CategoryAdapter categoryAdapter=new CategoryAdapter(categoryList,this);
         rv.setAdapter(categoryAdapter);
 
