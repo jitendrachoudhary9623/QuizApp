@@ -14,6 +14,8 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
 import com.quizapp.jitcodez.quizapp.Activity.ScoreActivity;
 import com.quizapp.jitcodez.quizapp.R;
 import com.quizapp.jitcodez.quizapp.database.MarkedAnswers;
@@ -47,6 +49,8 @@ public class QuestionFragment extends Fragment {
     boolean check,flag=false;
     MediaPlayer mediaPlayer;
     MarkedAnswers ma;
+    AdView rc_ad;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -56,7 +60,11 @@ public class QuestionFragment extends Fragment {
         questionNo=getArguments().getInt(QuizContract.QuizEntry.QUESTION_NO);
         score=getArguments().getInt("SCORE");
         Collections.shuffle(questionList,new Random(50));
-       // Toast.makeText(getContext(),questionList.get(0).getQuestion(),Toast.LENGTH_LONG).show();
+        rc_ad=(AdView)root.findViewById(R.id.rc_ad4);
+        AdRequest adRequest=new AdRequest.Builder().build();
+        rc_ad.loadAd(adRequest);
+
+        // Toast.makeText(getContext(),questionList.get(0).getQuestion(),Toast.LENGTH_LONG).show();
 if(questionList.size()!=0) {
     questionText = (TextView) root.findViewById(R.id.question_text);
     questionNumber = (TextView) root.findViewById(R.id.question_no);

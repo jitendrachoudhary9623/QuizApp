@@ -4,13 +4,13 @@
     <item
         android:id="@+id/action_update"
         android:orderInCategory="100"
-        android:title="update"
-        app:showAsAction="always" />
+        android:title="Update"
+        app:showAsAction="never" />
     <item
         android:id="@+id/action_settings"
         android:orderInCategory="101"
         android:title="Settings"
-        app:showAsAction="ifRoom" />
+        app:showAsAction="never" />
 
 </menu>
 

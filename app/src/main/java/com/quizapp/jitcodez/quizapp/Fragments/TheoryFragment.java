@@ -18,6 +18,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.quizapp.jitcodez.quizapp.Adapters.TheoryAdapter;
@@ -40,10 +42,15 @@ public class TheoryFragment extends Fragment {
 
     List<Theory> rp ;
     SharedPreferences sharedpreferences ;
+    AdView rc_ad;
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         final View root = inflater.inflate(R.layout.fragment_theory, container, false);
+        rc_ad=(AdView)root.findViewById(R.id.rc_ad2);
+        AdRequest adRequest=new AdRequest.Builder().build();
+        rc_ad.loadAd(adRequest);
 
         sharedpreferences =  PreferenceManager.getDefaultSharedPreferences(getActivity());//getActivity().getSharedPreferences("pref", Context.MODE_PRIVATE);
         if(sharedpreferences.contains(Constants.Theory)){

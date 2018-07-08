@@ -17,6 +17,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.quizapp.jitcodez.quizapp.Adapters.CategoryAdapter;
@@ -39,12 +41,15 @@ public class QuizFragment extends Fragment {
     RecyclerView rv;
     List<Category> categoryList;
     SharedPreferences sharedpreferences ;
-
+    AdView rc_ad;
     List<Category> rp = new ArrayList<Category>();
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         final View root=  inflater.inflate(R.layout.activity_main, container, false);
+        rc_ad=(AdView)root.findViewById(R.id.rc_ad3);
+        AdRequest adRequest=new AdRequest.Builder().build();
+        rc_ad.loadAd(adRequest);
 
         rv=(RecyclerView)root.findViewById(R.id.rv_category);
         rv.setItemAnimator(new DefaultItemAnimator());

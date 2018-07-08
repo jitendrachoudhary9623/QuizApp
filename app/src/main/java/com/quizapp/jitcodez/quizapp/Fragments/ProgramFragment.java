@@ -16,6 +16,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.quizapp.jitcodez.quizapp.Adapters.ProgramAdapter;
@@ -42,6 +44,8 @@ public class ProgramFragment extends Fragment {
     List<Program> pgmList;
     ProgramAdapter pg;
     SharedPreferences sharedpreferences ;
+    AdView rc_ad;
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -49,7 +53,10 @@ public class ProgramFragment extends Fragment {
         pgmList=new ArrayList<Program>();
         
         rc=root.findViewById(R.id.rc_program_view);
-        
+        rc_ad=(AdView)root.findViewById(R.id.rc_ad1);
+        AdRequest adRequest=new AdRequest.Builder().build();
+        rc_ad.loadAd(adRequest);
+
         return root;
     }
     

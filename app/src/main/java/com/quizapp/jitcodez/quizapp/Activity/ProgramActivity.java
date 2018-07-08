@@ -13,6 +13,9 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.ads.AdListener;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.InterstitialAd;
 import com.quizapp.jitcodez.quizapp.R;
 import com.quizapp.jitcodez.quizapp.database.Program;
 
@@ -24,6 +27,9 @@ import io.github.kbiakov.codeview.highlight.ColorTheme;
 public class ProgramActivity extends AppCompatActivity {
     CodeView codeView ;
     TextView statement,output;
+    AdRequest adRequest1;
+    InterstitialAd mInterstitialAd;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,6 +42,16 @@ output=(TextView)findViewById(R.id.program_output);
         statement.setText(p.getProgramStatement());
         final String code=p.getProgramCode();
 
+        mInterstitialAd = new InterstitialAd(this);
+        mInterstitialAd.setAdUnitId(getString(R.string.interstitial_full_screen_ad));
+
+        adRequest1 = new AdRequest.Builder()
+                .build();
+        mInterstitialAd.setAdListener(new AdListener() {
+            public void onAdLoaded() {
+                showInterstitial();
+            }
+        });
         codeView.setOptions(Options.Default.get(this)
                 .withLanguage("java")
                 .withCode(code)
@@ -63,7 +79,7 @@ output=(TextView)findViewById(R.id.program_output);
                     public void onClick(DialogInterface dialog, int which) {
                         Log.d("code122","This is ");
                         ClipboardManager clipboard = (ClipboardManager) getSystemService(CLIPBOARD_SERVICE);
-                        ClipData clip = ClipData.newPlainText("simple text", code);
+                        ClipData clip = ClipData.newPlainText("simple text", code+"\n\nHey check this Application which is a complete solution for you to be a java developer Download Now! \n\n https://play.google.com/store/apps/details?id="+(getResources().getString(R.string.playstore)));
                         clipboard.setPrimaryClip(clip);
                         Toast.makeText(getApplicationContext(), "String copied to Clipboard",
                                 Toast.LENGTH_LONG).show();
@@ -73,5 +89,23 @@ output=(TextView)findViewById(R.id.program_output);
                         .show();
             }
         });
+    }
+
+    private void showInterstitial() {
+        if (mInterstitialAd.isLoaded()) {
+            mInterstitialAd.show();
+        }
+    }
+    boolean flag=true;
+    @Override
+    public void onBackPressed() {
+        //
+        if(flag==true) {
+            mInterstitialAd.loadAd(adRequest1);
+            flag=false;
+        }else{
+            super.onBackPressed();
+        }
+
     }
 }

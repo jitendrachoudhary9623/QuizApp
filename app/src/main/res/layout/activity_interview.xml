@@ -14,20 +14,20 @@
        <LinearLayout
            android:layout_width="match_parent"
            android:layout_height="match_parent"
-           android:layout_weight="4.5"
+           android:layout_weight="5.8"
            android:orientation="vertical">
            <TextView
                android:layout_width="match_parent"
                android:layout_height="match_parent"
-               android:text="Advertisement will be here"
-               android:background="@color/red"
+               android:background="@android:color/darker_gray"
                android:textColor="@android:color/white"
                android:textStyle="bold"
                android:textSize="15sp"
-               android:layout_weight="1"
+               android:layout_weight="0.1"
                android:layout_margin="10dp"
 
                android:gravity="center_horizontal|center_vertical"/>
+
        </LinearLayout>
 
        <LinearLayout
@@ -70,13 +70,13 @@ android:padding="10dp"
            android:layout_width="match_parent"
            android:layout_height="match_parent"
            android:orientation="horizontal"
-           android:layout_weight="4.9">
+           android:layout_weight="5.5">
            <TextView
                android:id="@+id/interview_prev"
                android:layout_width="match_parent"
                android:layout_height="match_parent"
                android:text="PREV"
-               android:background="@color/red"
+               android:background="@android:color/darker_gray"
                android:textColor="@android:color/white"
                android:textStyle="bold"
                android:textSize="12sp"
@@ -91,7 +91,7 @@ android:padding="10dp"
                android:layout_height="match_parent"
                android:text="NEXT >>"
                android:layout_margin="10dp"
-               android:background="@color/red"
+               android:background="@android:color/darker_gray"
                android:textColor="@android:color/white"
                android:textStyle="bold"
                android:textSize="12sp"

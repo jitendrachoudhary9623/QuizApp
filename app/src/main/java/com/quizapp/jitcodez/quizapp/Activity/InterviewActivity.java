@@ -9,15 +9,24 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
+import com.google.android.gms.ads.AdListener;
+import com.google.android.gms.ads.InterstitialAd;
 import com.quizapp.jitcodez.quizapp.R;
 import com.quizapp.jitcodez.quizapp.database.Interview;
 
 import java.util.List;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
 public class InterviewActivity extends AppCompatActivity {
     List<Interview> interviewList;
     TextView prev,next,ques,ans;
     Interview p;
+    AdRequest adRequest=new AdRequest.Builder().build();
+    AdRequest adRequest1;
+    InterstitialAd mInterstitialAd;
+
+   // private AdView mAdMobAdView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,7 +34,19 @@ public class InterviewActivity extends AppCompatActivity {
        // final Interview p = (Interview) getIntent().getParcelableExtra("interview");
         interviewList=getIntent().getParcelableArrayListExtra("interview");
         int position=getIntent().getIntExtra("interview_post",0);
+     //   mAdMobAdView = (AdView) findViewById(R.id.admob_adview);
 
+        mInterstitialAd = new InterstitialAd(this);
+        mInterstitialAd.setAdUnitId(getString(R.string.interstitial_full_screen_ad));
+
+        adRequest1 = new AdRequest.Builder()
+                .build();
+        mInterstitialAd.setAdListener(new AdListener() {
+            public void onAdLoaded() {
+                showInterstitial();
+            }
+        });
+      //  mAdMobAdView.loadAd(adRequest);
         next=(TextView)findViewById(R.id.interview_next);
         prev=(TextView)findViewById(R.id.interview_prev);
         ques=(TextView)findViewById(R.id.interview_question);
@@ -85,5 +106,22 @@ public class InterviewActivity extends AppCompatActivity {
                         .show();
             }
         });
+    }
+    private void showInterstitial() {
+        if (mInterstitialAd.isLoaded()) {
+            mInterstitialAd.show();
+        }
+    }
+boolean flag=true;
+    @Override
+    public void onBackPressed() {
+        //
+        if(flag==true) {
+            mInterstitialAd.loadAd(adRequest1);
+flag=false;
+        }else{
+            super.onBackPressed();
+        }
+
     }
 }

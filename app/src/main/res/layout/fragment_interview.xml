@@ -2,7 +2,15 @@
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
     android:layout_height="match_parent">
+    <com.google.android.gms.ads.AdView xmlns:ads="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/rc_ad"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        ads:adSize="BANNER"
+        android:layout_marginTop="10dp"
+        ads:adUnitId="@string/banner_footer"></com.google.android.gms.ads.AdView>
     <LinearLayout
+        android:layout_below="@id/rc_ad"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="horizontal">

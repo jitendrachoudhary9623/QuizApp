@@ -13,4 +13,6 @@
     <string name="navigation_drawer_open">open</string>
     <string name="emailId">Jitendra93266@gmail.com</string>
     <string name="playstore">com.quizapp.jitcodez.quizapp</string>
+    <string name="banner_footer">ca-app-pub-3940256099942544/6300978111</string>
+    <string name="interstitial_full_screen_ad">ca-app-pub-5717827144758520/3588486695</string>
 </resources>

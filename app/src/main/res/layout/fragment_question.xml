@@ -75,6 +75,7 @@
        android:layout_below="@id/top_bar"
        android:id="@+id/main_bar"
        android:orientation="vertical"
+       android:layout_marginBottom="30dp"
        android:layout_weight="2">
 
        <TextView
@@ -138,20 +139,37 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="@dimen/fifty_dp"
+        android:layout_height="120dp"
         android:layout_weight="1"
         android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true"
+        android:orientation="vertical"
+        android:layout_margin="20dp"
      >
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        <com.google.android.gms.ads.AdView xmlns:ads="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/rc_ad4"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            ads:adSize="BANNER"
+            android:layout_marginTop="10dp"
+            ads:adUnitId="@string/banner_footer">
+
+        </com.google.android.gms.ads.AdView>
 
         <Button
+            android:layout_below="@+id/rc_ad4"
+
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="50dp"
             android:text="@string/next"
             android:background="@color/red"
             android:textColor="#ECEFF1"
             android:layout_margin="@dimen/ten_dp"
             android:textStyle="bold"
             android:id="@+id/next_question"/>
+        </RelativeLayout>
     </LinearLayout>
 </RelativeLayout></ScrollView>

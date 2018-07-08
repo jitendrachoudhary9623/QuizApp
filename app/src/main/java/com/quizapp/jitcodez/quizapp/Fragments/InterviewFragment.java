@@ -17,6 +17,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.quizapp.jitcodez.quizapp.Adapters.InterviewAdapter;
@@ -44,6 +46,7 @@ public class InterviewFragment extends Fragment {
     InterviewAdapter tech;
     NonTechInterviewAdapter nonTech;
     SharedPreferences sharedpreferences ;// sharedpreferences = getActivity().getSharedPreferences("pref", Context.MODE_PRIVATE);= getActivity().getSharedPreferences("pref", Context.MODE_PRIVATE);
+    AdView rc_ad;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -54,7 +57,9 @@ public class InterviewFragment extends Fragment {
 
         rc = root.findViewById(R.id.rc_interview_view_tech);
         rc2 = root.findViewById(R.id.rc_interview_view_non_tech);
-
+        rc_ad=(AdView)root.findViewById(R.id.rc_ad);
+        AdRequest adRequest=new AdRequest.Builder().build();
+        rc_ad.loadAd(adRequest);
 
         return root;
     }
