@@ -115,7 +115,7 @@ public class QuizFragment extends Fragment {
 
         }
         else {
-            Toast.makeText(getContext(),"Getting the categories",Toast.LENGTH_SHORT).show();
+           Toast.makeText(getContext(),"The Theory part may take time to load from the server , so please be patient",Toast.LENGTH_SHORT).show();
             new CategoryList().execute();
         }
 
@@ -136,7 +136,7 @@ public class QuizFragment extends Fragment {
         Gson gson = new Gson();
         String json = prefs.getString(key, null);
         Type type = new TypeToken<ArrayList<Category>>() {}.getType();
-        Toast.makeText(getContext(),"Category shared",Toast.LENGTH_SHORT).show();
+     //   Toast.makeText(getContext(),"Category shared",Toast.LENGTH_SHORT).show();
         return gson.fromJson(json, type);
     }
 }

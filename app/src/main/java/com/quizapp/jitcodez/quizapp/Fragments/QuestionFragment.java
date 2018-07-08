@@ -252,7 +252,7 @@ if(questionList.size()!=0) {
                     getContext().startActivity(i);
                 }
             } else {
-                Toast.makeText(getContext(), "Answer the Question", Toast.LENGTH_LONG).show();
+               Toast.makeText(getContext(), "Answer the Question", Toast.LENGTH_LONG).show();
             }
         }
     });

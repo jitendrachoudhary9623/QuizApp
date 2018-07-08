@@ -69,7 +69,7 @@ public class ProgramFragment extends Fragment {
 
         }
         else {
-            Toast.makeText(getContext(),"Getting",Toast.LENGTH_SHORT).show();
+           // Toast.makeText(getContext(),"Getting",Toast.LENGTH_SHORT).show();
             new ProgramList().execute();
         }
 
@@ -90,7 +90,7 @@ public class ProgramFragment extends Fragment {
         Gson gson = new Gson();
         String json = prefs.getString(key, null);
         Type type = new TypeToken<ArrayList<Program>>() {}.getType();
-        Toast.makeText(getContext(),"Program shared",Toast.LENGTH_SHORT).show();
+       // Toast.makeText(getContext(),"Program shared",Toast.LENGTH_SHORT).show();
         return gson.fromJson(json, type);
     }
 

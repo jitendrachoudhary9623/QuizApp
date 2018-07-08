@@ -32,7 +32,7 @@ public class SectionFragment extends Fragment {
        // th=new ArrayList<Theory>();
         th=getArguments().getParcelableArrayList("theoryList");
         if(th!=null) {
-            Toast.makeText(getContext(), "Section " + th.size(), Toast.LENGTH_SHORT).show();
+           // Toast.makeText(getContext(), "Section " + th.size(), Toast.LENGTH_SHORT).show();
 
             rc = (RecyclerView) root.findViewById(R.id.rc_theory_view);
             TheoryAdapter theoryAdapter = new TheoryAdapter(getContext(), th);
