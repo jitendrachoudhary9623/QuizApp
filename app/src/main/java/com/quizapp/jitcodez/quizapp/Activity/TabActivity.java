@@ -1,5 +1,6 @@
 package com.quizapp.jitcodez.quizapp.Activity;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 import android.support.annotation.NonNull;
@@ -113,8 +114,13 @@ public class TabActivity extends AppCompatActivity {
 
                 //  editor.remove("purchaseToken");
                // editor.remove("orderId");
-                editor.commit();                break;
+                editor.commit();
+                break;
+            case R.id.action_settings:
+                Intent i = new Intent(this, PrefActivity.class);
+                startActivity(i);
 
+                break;
             default:
                 break;
         }

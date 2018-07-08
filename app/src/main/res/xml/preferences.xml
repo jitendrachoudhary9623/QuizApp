@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <Preference android:title="Rate US"
+        android:key="rate_us"
+        android:summary="Provide Your valuable rating on playstore"></Preference>
+    <Preference android:title="See more Apps"
+        android:key="more"
+      ></Preference>
+    <Preference android:title="Report a Bug"
+        android:key="bug"
+        android:summary="Found a Bug? Report us "></Preference>
+    <Preference android:title="Email Us"
+        android:key="email"
+        android:summary="Email US with your feedback"></Preference>
+    <Preference android:title="Tell Your Friend"
+        android:key="friend"
+        android:summary="Share app with your friend"></Preference>
+    <Preference android:title="References"
+        android:key="ref"
+        android:summary="References for this app's  content"></Preference>
+    <Preference android:title="About US"
+    android:key="about"
+    android:summary="Get  to know us"></Preference>
+</PreferenceScreen>

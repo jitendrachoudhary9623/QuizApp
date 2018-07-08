@@ -6,7 +6,11 @@
         android:orderInCategory="100"
         android:title="update"
         app:showAsAction="always" />
-
+    <item
+        android:id="@+id/action_settings"
+        android:orderInCategory="101"
+        android:title="Settings"
+        app:showAsAction="ifRoom" />
 
 </menu>
 
